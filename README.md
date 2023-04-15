@@ -31,6 +31,12 @@ There's a lot of stuff there, so to not to forget something, here is the list of
 * [`pyenv`](https://github.com/pyenv/pyenv) - `Python` version manager
 * [`poetry`](https://python-poetry.org/docs/) - a tool for dependency management and packaging in `Python`
 
+## Shell
+
+* `zsh`
+* [`oh-my-zsh`](http://ohmyz.sh/) - an open source, community-driven framework for managing zsh configuration
+* [`starship`](https://starship.rs/) - "The minimal, blazing-fast, and infinitely customizable prompt for any shell"(c)
+
 # License
 
 [WTFPL](./LICENSE): do the fuck you want. Enjoy!

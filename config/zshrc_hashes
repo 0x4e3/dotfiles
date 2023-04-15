@@ -1,0 +1,3 @@
+hash -d projects=~/Projects
+hash -d sandbox=~/Projects/sandbox
+hash -d personal=~/Projects/personal

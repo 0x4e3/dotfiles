@@ -1,0 +1,30 @@
+---
+
+- shell:
+  - command: |
+      sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+    description: install oh-my-zsh
+    stdout: true
+    stderr: true
+- create:
+    ~/.shell:
+      mode: 0700
+    ~/Projects:
+      mode: 0755
+    ~/Projects/personal:
+      mode: 0755
+    ~/Projects/sandbox:
+      mode: 0755
+- link:
+    ~/.zshrc:
+      path: config/zshrc
+      force: true
+    ~/.shell/zshrc_aliases:
+      path: config/zshrc_aliases
+      force: true
+    ~/.shell/zshrc_hashes:
+      path: config/zshrc_hashes
+      force: true
+    ~/.shell/zshrc_path:
+      path: config/zshrc_path
+      force: true

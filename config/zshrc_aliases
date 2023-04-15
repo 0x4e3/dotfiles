@@ -1,0 +1,9 @@
+alias vim="nvim"
+alias zshconfig="vim ~/.zshrc"
+alias zshupdate="source ~/.zshrc"
+alias ohmyzsh="vim ~/.oh-my-zsh"
+alias lg="exa -lahg --git --octal-permissions"
+alias la="exa -lahg --octal-permissions"
+alias get-pub-key="cat ~/.ssh/id_rsa.pub"
+alias c="/usr/bin/clear"
+alias fuck='eval $(thefuck $(fc -ln -1 | tail -n 1)); fc -R'
