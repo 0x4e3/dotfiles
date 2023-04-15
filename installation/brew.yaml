@@ -1,0 +1,7 @@
+---
+
+- brewfile:
+    file: Brewfile
+    stdout: true
+    stderr: true
+    include: ['tap', 'brew', 'cask']
