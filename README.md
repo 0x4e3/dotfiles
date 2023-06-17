@@ -39,6 +39,11 @@ There's a lot of stuff there, so to not to forget something, here is the list of
 * [`oh-my-zsh`](http://ohmyz.sh/) - an open source, community-driven framework for managing zsh configuration
 * [`starship`](https://starship.rs/) - "The minimal, blazing-fast, and infinitely customizable prompt for any shell"(c)
 
+## iTerm2
+
+* sync settings via git
+* configure application to use settings from dotfiles repo
+
 # Getting started
 
 ### 1. Install Xcode developer tools
