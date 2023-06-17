@@ -1,0 +1,27 @@
+[user]
+	name = Alexander Lebedev
+	email = a.lebedev@bestdoctor.ru
+[alias]
+	s = status
+	cm = commit
+	po = push origin
+	pom = push origin master
+	pod = push origin develop
+	plo = pull origin
+	plom = pull origin master
+	plod = pull origin develop
+	la = !git config -l | grep alias | cut -c 7-
+	it = !git init && git commit -m \"Initial\" --allow-empty
+	shorty = status --short --branch
+	commend = commit --amend --no-edit
+	grog = log --graph --abbrev-commit --decorate --all --format=format:\"%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(dim white) - %an%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n %C(white)%s%C(reset)\"
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset' --abbrev-commit
+	ls = log --pretty=format:\"%C(yellow)%h%Cred%d\\\\ %Creset%s%Cblue\\\\ [%cn]\" --decorate
+	ll = log --pretty=format:\"%C(yellow)%h%Cred%d\\\\ %Creset%s%Cblue\\\\ [%cn]\" --decorate --numstat
+[pull]
+	rebase = true
+[core]
+	excludesfile = /Users/ad/.gitignore_global
+[init]
+	defaultBranch = main
+
