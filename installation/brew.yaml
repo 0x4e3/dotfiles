@@ -1,5 +1,11 @@
 ---
 
+- shell:
+  - command: |
+      bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    description: install homebrew
+    stdout: true
+    stderr: true
 - brewfile:
     file: Brewfile
     stdout: true
