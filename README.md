@@ -9,8 +9,9 @@ Inspired by:
 
 What do we have here:
 
-* `brew` dependencies: cli & gui applications, fonts, etc. See [`Brewfile`](./Brewfile) for details.
+* `brew` dependencies: cli & gui applications, fonts, etc. See [`Brewfile`](./Brewfile) for details
 * tools for `python` development
+* shell configuration. See [`config`](./config/) for details
 
 ## Brewfile
 
