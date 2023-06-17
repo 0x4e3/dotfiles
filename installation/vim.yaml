@@ -1,0 +1,17 @@
+---
+
+- shell:
+  - command: |
+      sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+    description: install vim-plug
+    stdout: true
+
+- create:
+    ~/.config/nvim:
+      model: 0755
+
+- link:
+    ~/.config/nvim/init.vim:
+      path: vim/init.vim
+      force: true
