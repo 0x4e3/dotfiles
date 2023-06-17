@@ -44,6 +44,10 @@ There's a lot of stuff there, so to not to forget something, here is the list of
 * sync settings via git
 * configure application to use settings from dotfiles repo
 
+## macOS defaults
+
+* [my collection](https://0x4e3.notion.site/macOS-defaults-640120bb910940039f87475408d8450a?pvs=4)
+
 # Getting started
 
 ### 1. Install Xcode developer tools
