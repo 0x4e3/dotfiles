@@ -2,6 +2,7 @@
 
 Inspired by:
 * Nikita Sobolev's [dotfiles](https://github.com/sobolevn/dotfiles)
+* Sheharyar Naseer's [dotfiles](https://github.com/sheharyarn/dotfiles/)
 * [Instant +100% command line productivity boost](https://dev.to/sobolevn/instant-100-command-line-productivity-boost)
 * [Using better CLIs](https://dev.to/sobolevn/using-better-clis-6o8)
 
