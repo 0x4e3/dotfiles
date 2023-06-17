@@ -7,7 +7,7 @@
 	url = https://github.com/sobolevn/dotbot-brewfile.git
 [submodule "dotbot-pip"]
 	path = dotbot-pip
-	url = https://github.com/sobolevn/dotbot-pip.git
+  url = https://github.com/sobolevn/dotbot-pip.git
 [submodule "dotbot-git"]
 	path = dotbot-git
 	url = https://github.com/DrDynamic/dotbot-git.git
