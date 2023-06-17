@@ -38,6 +38,29 @@ There's a lot of stuff there, so to not to forget something, here is the list of
 * [`oh-my-zsh`](http://ohmyz.sh/) - an open source, community-driven framework for managing zsh configuration
 * [`starship`](https://starship.rs/) - "The minimal, blazing-fast, and infinitely customizable prompt for any shell"(c)
 
+# Getting started
+
+### 1. Install Xcode developer tools
+
+```bash
+xcode-select --install
+
+# Set HostName
+sudo scutil --set HostName adBook
+```
+
+### 2. Clone dotfiles
+
+```bash
+git clone https://github.com/0x4e3/dotfiles.git ~/.dotfiles
+```
+
+### 3. Run bootstrap script
+
+```bash
+cd ~/.dotfiles && bash bootstrap.sh
+```
+
 # License
 
 [WTFPL](./LICENSE): do the fuck you want. Enjoy!
