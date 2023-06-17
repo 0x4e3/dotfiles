@@ -6,6 +6,12 @@
     description: install oh-my-zsh
     stdout: true
     stderr: true
+
+- git:
+    "~/.oh-my-zsh/custom/plugins/kube-aliases":
+      url: https://github.com/Dbz/kube-aliases.git
+      description: omzsh kube-aliases
+
 - create:
     ~/.shell:
       mode: 0700
@@ -15,6 +21,7 @@
       mode: 0755
     ~/Projects/sandbox:
       mode: 0755
+
 - link:
     ~/.zshrc:
       path: config/zshrc
@@ -27,4 +34,13 @@
       force: true
     ~/.shell/zshrc_path:
       path: config/zshrc_path
+      force: true
+    ~/.zprofile:
+      path: config/zprofile
+      force: true
+    ~/.gitconfig:
+      path: config/gitconfig
+      force: true
+    ~/.gitignore_global:
+      path: config/gitignore_global
       force: true
