@@ -6,6 +6,11 @@
     description: install homebrew
     stdout: true
     stderr: true
+- shell:
+  - command: source ~/.zshrc
+    description: update env
+    stdout: true
+    stderr: true
 - brewfile:
     file: Brewfile
     stdout: true
