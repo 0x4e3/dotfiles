@@ -1,0 +1,44 @@
+---
+
+name: Regular sanity check
+on:
+  schedule:
+    - cron: 21 12 01 */3 *
+
+jobs:
+  create_issue:
+    name: Create sanity check issue
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+    steps:
+      - name: Create sanity check issue
+        run:  |
+          if [[ $CLOSE_PREVIOUS == true ]]; then
+            previous_issue_number=$(gh issue list \
+              --json number \
+              --jq '.[0].number')
+            if [[ -n $previous_issue_number ]]; then
+              gh issue close "$previous_issue_number"
+              gh issue unpin "$previous_issue_number"
+            fi
+          fi
+          new_issue_url=$(gh issue create \
+            --title "$TITLE" \
+            --body "$BODY")
+          if [[ $PINNED == true ]]; then
+            gh issue pin "$new_issue_url"
+          fi
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_REPO: ${{ github.repository }}
+          TITLE: Sanity check
+          BODY: |
+            ### dotfiles sanity check
+
+            - [ ] review & update list of homebrew packages
+            - [ ] review & update shell settings
+            - [ ] review & update tools settings in `~/.config`
+          PINNED: false
+          CLOSE_PREVIOUS: false
+
