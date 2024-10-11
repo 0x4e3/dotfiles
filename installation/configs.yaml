@@ -55,9 +55,9 @@
       path: config/gitignore_global
       force: true
 
-  - shell:
-     - command: touch ~/.shell/zshrc_local
-       description: create zsh inclusion for locals
-       stdout: true
-       stderr: true
+- shell:
+  - command: touch ~/.shell/zshrc_local
+    description: create zsh inclusion for locals
+    stdout: true
+    stderr: true
 
