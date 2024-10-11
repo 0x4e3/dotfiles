@@ -102,3 +102,6 @@ eval "$(starship init zsh)"
 
 # command-line fuzzy finder
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# Local shell settings
+source $HOME/.shell/zshrc_local
