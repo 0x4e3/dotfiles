@@ -34,25 +34,19 @@
 
 - link:
     ~/.zshrc:
-      path: config/zshrc
+      path: shell/zshrc
       force: true
     ~/.shell/zshrc_aliases:
-      path: config/zshrc_aliases
+      path: shell/zshrc_aliases
       force: true
     ~/.shell/zshrc_hashes:
-      path: config/zshrc_hashes
+      path: shell/zshrc_hashes
       force: true
     ~/.shell/zshrc_path:
-      path: config/zshrc_path
+      path: shell/zshrc_path
       force: true
     ~/.zprofile:
-      path: config/zprofile
-      force: true
-    ~/.gitconfig:
-      path: config/gitconfig
-      force: true
-    ~/.gitignore_global:
-      path: config/gitignore_global
+      path: shell/zprofile
       force: true
 
 - shell:
