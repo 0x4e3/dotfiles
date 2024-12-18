@@ -20,7 +20,7 @@ sketchybar -m --add item battery right \
     mouse.exited \
     mouse.exited.global \
     power_source_change \
-    system_woke \
-  --add item battery.details popup.battery \
-  --set battery.details "${battery_details[@]}" 
+    system_woke
+  # --add item battery.details popup.battery \
+  # --set battery.details "${battery_details[@]}" 
 

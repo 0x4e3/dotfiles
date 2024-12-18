@@ -10,7 +10,7 @@ PLUGIN_DIR="$CONFIG_DIR/plugins"
 FONT="JetBrainsMono Nerd Font"
 ICON_FONT="SF Pro"
 
-PADDING=6
+PADDING=2
 
 source "$CONFIG_DIR/colors.sh"
 source "$CONFIG_DIR/icons.sh"
@@ -23,16 +23,13 @@ source "$CONFIG_DIR/icons.sh"
 # https://felixkratz.github.io/SketchyBar/config/tricks#color-picker
 
 bar=(
-  height=32
+  height=42
   color=$BG_PRI_COLR
   shadow=off
   position=top
   sticky=on
-  padding_right=15
-  padding_left=15
-  corner_radius=10
-  y_offset=6
-  margin=6
+  padding_right=0
+  padding_left=0
   blur_radius=30
   notch_width=0
 )
@@ -80,14 +77,16 @@ sketchybar --default "${default[@]}"
 source "$ITEMS_DIR/calendar.sh"
 source "$ITEMS_DIR/battery.sh"
 source "$ITEMS_DIR/volume.sh"
+source "$ITEMS_DIR/telegram.sh"
+source "$ITEMS_DIR/mattermost.sh"
 source "$ITEMS_DIR/keyboard.sh"
 # source "$ITEMS_DIR/wifi.sh"
 
 ##### Adding Left Items #####
 
 source "$ITEMS_DIR/apple.sh"
-source "$ITEMS_DIR/spaces.sh"
+# source "$ITEMS_DIR/spaces.sh"
+# source "$ITEMS_DIR/aerospace.sh"
 source "$ITEMS_DIR/front_app.sh"
-
 ##### Force all scripts to run the first time (never do this in a script) #####
 sketchybar --update

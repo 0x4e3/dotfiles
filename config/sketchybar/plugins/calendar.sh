@@ -6,4 +6,4 @@
 
 source "$CONFIG_DIR/icons.sh"
 
-sketchybar --set "$NAME" label="$(date '+%a %d/%m/%Y %H:%M:%S')" icon=${CALENDAR_ICON}
+sketchybar --set "$NAME" label="$(date '+%H:%M:%S')" 

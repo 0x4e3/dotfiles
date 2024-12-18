@@ -34,3 +34,4 @@ export MEMORY=﬙
 export NETWORK=􀤆
 export NETWORK_DOWN=􀅄
 export NETWORK_UP=􀄿
+
