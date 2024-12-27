@@ -1,0 +1,43 @@
+---
+
+# skhd
+# ----------------------------------------------------------------------------
+- link:
+    ~/.config/skhd/skhdrc:
+      path: config/skhd/skhdrc
+      create: true
+      force: true
+
+# aerospace
+# ----------------------------------------------------------------------------
+- link:
+    ~/.config/aerospace/aerospace.toml:
+      path: config/aerospace/aerospace.toml
+      create: true
+      force: true
+
+# sketchybar
+# ----------------------------------------------------------------------------
+- link:
+    ~/.config/sketchybar/:
+      path: config/sketchybar/*
+      create: true
+      force: true
+      glob: true
+
+# nvim
+# ----------------------------------------------------------------------------
+- link:
+    ~/.config/nvim/:
+      path: config/nvim/*
+      create: true
+      force: true
+      glob: true
+
+# wezterm
+# ----------------------------------------------------------------------------
+- link:
+    ~/.config/wezterm/wezterm.lua:
+      path: config/wezterm/wezterm.lua
+      create: true
+      force: true
