@@ -1,5 +1,8 @@
 # lebedev's dotfiles
 
+[![Lint YAML](https://github.com/0x4e3/dotfiles/actions/workflows/lint-yaml.yaml/badge.svg)](https://github.com/0x4e3/dotfiles/actions/workflows/lint-yaml.yaml) 
+[![Lint GitHub Actions](https://github.com/0x4e3/dotfiles/actions/workflows/lint-github-actions.yaml/badge.svg)](https://github.com/0x4e3/dotfiles/actions/workflows/lint-github-actions.yaml)  
+
 Inspired by:
 * Nikita Sobolev's [dotfiles](https://github.com/sobolevn/dotfiles)
 * Sheharyar Naseer's [dotfiles](https://github.com/sheharyarn/dotfiles/)
