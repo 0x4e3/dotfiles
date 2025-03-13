@@ -8,14 +8,14 @@
     stderr: true
 
 - git:
-  "~/.oh-my-zsh/custom/plugins/zsh-autosuggestions/":
-    url: https://github.com/zsh-users/zsh-autosuggestions.git
-    description: zsh auto suggestions
+    "~/.oh-my-zsh/custom/plugins/zsh-autosuggestions":
+      url: https://github.com/zsh-users/zsh-autosuggestions.git
+      description: zsh auto suggestions
 
 - git:
-  "~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/":
-    url: https://github.com/zsh-users/zsh-syntax-highlighting.git
-    description: zshu syntax highlighting
+    "~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting":
+      url: https://github.com/zsh-users/zsh-syntax-highlighting.git
+      description: zshu syntax highlighting
 
 - git:
     "~/.oh-my-zsh/custom/plugins/kube-aliases":
