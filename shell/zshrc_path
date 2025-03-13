@@ -4,10 +4,6 @@ export PATH="$HOME/.local/bin:$PATH"
 export PATH="/usr/local/opt/mysql-client@5.7/bin:$PATH"
 export PATH="/usr/local/opt/postgresql@12/bin:$PATH"
 
-### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
-export PATH="/Users/ad/.rd/bin:$PATH"
-### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
-
 # Force to use Homebrew programs instead of system.
 # Must be the last manipulation with the $PATH.
 export PATH="/usr/local/bin:$PATH"
