@@ -1,0 +1,8 @@
+require("items.widgets.settings")
+require("items.widgets.battery")
+require("items.widgets.volume")
+require("items.widgets.wifi")
+require("items.widgets.tunnelblick")
+require("items.widgets.ram")
+require("items.widgets.cpu")
+require("items.widgets.telegram")
