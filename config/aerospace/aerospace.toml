@@ -68,8 +68,8 @@ inner.horizontal = 5
 inner.vertical =   5
 outer.left =       5
 outer.bottom =     5
-outer.top =        12
-outer.right =      5
+outer.top =        [{ monitor.main = 12 }, { monitor.secondary = 45 }, 12]
+outer.right =      [{ monitor.main = 5 }, {monitor.secondary = 5 }, 5]
 
 # 'main' binding mode declaration
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
@@ -246,8 +246,8 @@ run = 'layout floating'
 
 [[on-window-detected]]
 if.app-id = 'com.microsoft.VSCode'
-run = ['move-node-to-workspace I', 'layout accordion horizontal']
+run = ['move-node-to-workspace I']
 
 [[on-window-detected]]
 if.app-id = 'us.zoom.xos'
-run = ['move-node-to-workspace Z', 'layout accordion horizontal']
+run = ['move-node-to-workspace Z'] 
