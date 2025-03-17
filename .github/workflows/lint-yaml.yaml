@@ -4,14 +4,14 @@ name: Lint YAML
 
 on:  # yamllint disable-line rule:truthy
   push:
-    branches: [main]
+    branches: [main, work, personal]
     paths:
       - '**.yml'
       - '**.yaml'
       - '.github/workflows/**.yml'
       - '.github/workflows/**.yaml'
   pull_request:
-    branches: [main]
+    branches: [main, work, personal]
     paths:
       - '**.yml'
       - '**.yaml'
