@@ -4,6 +4,6 @@ alias zshupdate="source ~/.zshrc"
 alias ohmyzsh="vim ~/.oh-my-zsh"
 alias lg="eza -lahg --git --octal-permissions --icons"
 alias la="eza -lahg --octal-permissions --icons"
-alias get-pub-key="cat ~/.ssh/id_rsa.pub"
+alias get-pub-key="cat ~/.ssh/id_ed25519.pub"
 alias c="/usr/bin/clear"
 alias fuck='eval $(thefuck $(fc -ln -1 | tail -n 1)); fc -R'
