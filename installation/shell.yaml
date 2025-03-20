@@ -1,11 +1,10 @@
 ---
-
 - shell:
-  - command: |
-      sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-    description: install oh-my-zsh
-    stdout: true
-    stderr: true
+    - command: |
+        sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+      description: install oh-my-zsh
+      stdout: true
+      stderr: true
 
 - git:
     "~/.oh-my-zsh/custom/plugins/zsh-autosuggestions":
@@ -50,8 +49,7 @@
       force: true
 
 - shell:
-  - command: touch ~/.shell/zshrc_local
-    description: create zsh inclusion for locals
-    stdout: true
-    stderr: true
-
+    - command: touch ~/.shell/zshrc_local
+      description: create zsh inclusion for locals
+      stdout: true
+      stderr: true

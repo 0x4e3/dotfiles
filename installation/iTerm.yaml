@@ -1,11 +1,10 @@
 ---
-
 - shell:
-  - command: |
-      defaults write com.googlecode.iterm2 PrefsCustomFolder -string "~/.dotfiles/iTerm/settings"
-    description: specify the preferences directory
-    stdout: true
-  - command: |
-      defaults write com.googlecode.iterm2 LoadPrefsFromCustomFolder -bool true
-    description: tell iTerm2 to use the custom preferences in the directory
-    stdout: true
+    - command: |
+        defaults write com.googlecode.iterm2 PrefsCustomFolder -string "~/.dotfiles/iTerm/settings"
+      description: specify the preferences directory
+      stdout: true
+    - command: |
+        defaults write com.googlecode.iterm2 LoadPrefsFromCustomFolder -bool true
+      description: tell iTerm2 to use the custom preferences in the directory
+      stdout: true
