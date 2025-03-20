@@ -1,6 +1,9 @@
 ---
 name: Regular sanity check
-on:  # yamllint disable-line rule:truthy
+
+permissions: {}
+
+on:
   schedule:
     - cron: 21 12 01 */3 *
 
