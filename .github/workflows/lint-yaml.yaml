@@ -1,22 +1,23 @@
 ---
-
 name: Lint YAML
 
-on:  # yamllint disable-line rule:truthy
+permissions: {}
+
+on:
   push:
     branches: [main, work, personal]
     paths:
-      - '**.yml'
-      - '**.yaml'
-      - '.github/workflows/**.yml'
-      - '.github/workflows/**.yaml'
+      - "**.yml"
+      - "**.yaml"
+      - ".github/workflows/**.yml"
+      - ".github/workflows/**.yaml"
   pull_request:
     branches: [main, work, personal]
     paths:
-      - '**.yml'
-      - '**.yaml'
-      - '.github/workflows/**.yml'
-      - '.github/workflows/**.yaml'
+      - "**.yml"
+      - "**.yaml"
+      - ".github/workflows/**.yml"
+      - ".github/workflows/**.yaml"
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
@@ -38,18 +39,4 @@ jobs:
         with:
           # All files under base dir
           file_or_dir: "."
-          config_data: |
-            extends: default
-            yaml-files:
-              - '*.yaml'
-              - '*.yml'
-            rules:
-              document-start:
-                level: warning
-              line-length:
-                level: warning
-              new-line-at-end-of-file:
-                level: warning
-              trailing-spaces:
-                level: warning
-
+          config_file: ".yamllint"

@@ -1,6 +1,8 @@
 ---
-
 name: Regular sanity check
+
+permissions: {}
+
 on:
   schedule:
     - cron: 21 12 01 */3 *
@@ -13,7 +15,7 @@ jobs:
       issues: write
     steps:
       - name: Create sanity check issue
-        run:  |
+        run: |
           if [[ $CLOSE_PREVIOUS == true ]]; then
             previous_issue_number=$(gh issue list \
               --json number \
@@ -41,4 +43,3 @@ jobs:
             - [ ] review & update tools settings in `~/.config`
           PINNED: false
           CLOSE_PREVIOUS: false
-

@@ -1,18 +1,22 @@
 ---
-
 - shell:
-  - command: |
-      bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-    description: install homebrew
-    stdout: true
-    stderr: true
-- shell:
-  - command: source ~/.zshrc
-    description: update env
-    stdout: true
-    stderr: true
+    - command: |
+        bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+      description: install homebrew
+      stdout: true
+      stderr: true
+    - command: source ~/.zshrc
+      description: update env
+      stdout: true
+      stderr: true
 - brewfile:
     file: Brewfile
     stdout: true
     stderr: true
-    include: ['tap', 'brew', 'cask']
+    include: ["tap", "brew", "cask"]
+- shell:
+    - command: |
+        source ~/.zshrc
+      description: update env
+      stdout: true
+      stderr: true

@@ -40,3 +40,4 @@ run_dotbot 'installation/python.yaml' || true
 run_dotbot 'installation/iTerm.yaml' || true
 run_dotbot 'installation/vim.yaml' || true
 run_dotbot 'installation/config.yaml' || true
+run_dotbot 'installation/defaults.yaml' || true

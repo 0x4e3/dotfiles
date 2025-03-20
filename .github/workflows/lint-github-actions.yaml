@@ -1,8 +1,9 @@
 ---
-
 name: Lint GitHub Actions
 
-on:  # yamllint disable-line rule:truthy
+permissions: {}
+
+on:
   push:
     branches: [main, work, personal]
     paths:
@@ -43,7 +44,6 @@ jobs:
           ./actionlint -color -shellcheck=
         shell: bash
 
-
   lintGitHubActionsForSecurity:
     runs-on: ubuntu-latest
     timeout-minutes: 15
@@ -70,4 +70,3 @@ jobs:
 
       - name: Run zizmor on GitHub Actions
         run: zizmor .github/workflows/*
-
