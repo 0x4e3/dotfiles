@@ -39,4 +39,4 @@ jobs:
         with:
           # All files under base dir
           file_or_dir: "."
-          yamllint_config_filepath: ".yamllint"
+          config_file: ".yamllint"
