@@ -5,7 +5,6 @@
       description: install homebrew
       stdout: true
       stderr: true
-- shell:
     - command: source ~/.zshrc
       description: update env
       stdout: true
@@ -15,3 +14,9 @@
     stdout: true
     stderr: true
     include: ["tap", "brew", "cask"]
+- shell:
+  - command: |
+      source ~/.zshrc
+    description: update env
+    stdout: true
+    stderr: true

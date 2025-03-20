@@ -2,7 +2,7 @@
 # After that, you can edit ~/.aerospace.toml to your liking
 
 # It's not necessary to copy all keys to your config.
-# If the key is missing in your config, "default-config.toml" will serve as a fallback
+# If the key is missing in your config, 'default-config.toml' will serve as a fallback
 
 # You can use it to add commands that run after login to macOS user session.
 # 'start-at-login' needs to be 'true' for 'after-login-command' to work
@@ -20,7 +20,7 @@ after-startup-command = [
 
 # Notify Sketchybar about workspace change
 exec-on-workspace-change = [
-  '/bin/bash', 
+  '/bin/bash',
   '-c',
   'sketchybar --trigger aerospace_workspace_change FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE'
 ]
@@ -54,12 +54,12 @@ key-mapping.preset = 'qwerty'
 # See https://nikitabobko.github.io/AeroSpace/guide#on-focus-changed-callbacks
 # See https://nikitabobko.github.io/AeroSpace/commands#move-mouse
 on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
-on-focus-changed = "move-mouse window-lazy-center"
+on-focus-changed = 'move-mouse window-lazy-center'
 
 # Gaps between windows (inner-*) and between monitor edges (outer-*).
 # Possible values:
 # - Constant:     gaps.outer.top = 8
-# - Per monitor:  gaps.outer.top = [{ monitor.main = 16 }, { monitor."some-pattern" = 32 }, 24]
+# - Per monitor:  gaps.outer.top = [{ monitor.main = 16 }, { monitor.'some-pattern' = 32 }, 24]
 #                 In this example, 24 is a default value when there is no match.
 #                 Monitor pattern is the same as for 'workspace-to-monitor-force-assignment'.
 #                 See: https://nikitabobko.github.io/AeroSpace/guide#assign-workspaces-to-monitors
@@ -68,8 +68,8 @@ inner.horizontal = 5
 inner.vertical =   5
 outer.left =       5
 outer.bottom =     5
-outer.top =        10
-outer.right =      5
+outer.top =        [{ monitor.main = 12 }, { monitor.secondary = 45 }, 12]
+outer.right =      [{ monitor.main = 5 }, {monitor.secondary = 5 }, 5]
 
 # 'main' binding mode declaration
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
@@ -94,7 +94,7 @@ outer.right =      5
 # See: https://nikitabobko.github.io/AeroSpace/commands#exec-and-forget
 # You can uncomment the following lines to open up terminal with alt + enter shortcut (like in i3)
 # alt-enter = '''exec-and-forget osascript -e '
-# tell application "Terminal"
+# tell application 'Terminal'
 #     do script
 #     activate
 # end tell'
@@ -130,17 +130,17 @@ alt-6 = 'workspace 6'
 alt-7 = 'workspace 7'
 alt-8 = 'workspace 8'
 alt-9 = 'workspace 9'
-# alt-a = 'workspace A' 
+# alt-a = 'workspace A'
 alt-b = 'workspace B'  # browser
 alt-c = 'workspace C'  # chats
 # alt-d = 'workspace D'
-# alt-e = 'workspace E'
+alt-e = 'workspace E'  # email
 # alt-f = 'workspace F'
 # alt-g = 'workspace G'
 alt-i = 'workspace I'  # ide
-# alt-m = 'workspace M'
+alt-m = 'workspace M'  # mail
 alt-n = 'workspace N'  # notes
-# alt-o = 'workspace O'  
+# alt-o = 'workspace O'
 # alt-p = 'workspace P'
 # alt-q = 'workspace Q'
 # alt-r = 'workspace R'
@@ -151,7 +151,7 @@ alt-t = 'workspace T'  # terminal
 # alt-w = 'workspace W'
 # alt-x = 'workspace X'
 # alt-y = 'workspace Y'
-# alt-z = 'workspace Z'
+alt-z = 'workspace Z'  # zoom
 #
 # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
 alt-shift-1 = 'move-node-to-workspace 1'
@@ -184,7 +184,7 @@ alt-shift-t = 'move-node-to-workspace T'
 # alt-shift-w = 'move-node-to-workspace W'
 # alt-shift-x = 'move-node-to-workspace X'
 # alt-shift-y = 'move-node-to-workspace Y'
-# alt-shift-z = 'move-node-to-workspace Z'
+alt-shift-z = 'move-node-to-workspace Z'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#workspace-back-and-forth
 alt-tab = 'workspace-back-and-forth'
@@ -222,36 +222,32 @@ alt-d = ['exec-and-forget osascript ~/.config/aerospace/scripts/show-date.scpt',
 # Application rearanging
 [[on-window-detected]]
 if.app-id = 'com.github.wez.wezterm'
-run = "move-node-to-workspace T"
+run = 'move-node-to-workspace T'
 
 [[on-window-detected]]
 if.app-id = 'com.spotify.client'
-run = "move-node-to-workspace S"
+run = 'move-node-to-workspace M'
 
 [[on-window-detected]]
 if.app-id = 'md.obsidian'
-run = "move-node-to-workspace N"
+run = 'move-node-to-workspace N'
 
 [[on-window-detected]]
 if.app-id = 'company.thebrowser.Browser'
-run = "move-node-to-workspace B"
-
-[[on-window-detected]]
-if.app-id = 'Mattermost.Desktop'
-run = "move-node-to-workspace C"
-
-[[on-window-detected]]
-if.app-id = 'com.jetbrains.pycharm'
-run = ['layout floating', 'move-node-to-workspace I']
+run = 'move-node-to-workspace B'
 
 [[on-window-detected]]
 if.app-name-regex-substring = 'telegram'
-run = 'layout floating'
+run = 'move-node-to-workspace C'
 
 [[on-window-detected]]
 if.app-name-regex-substring = 'finder'
 run = 'layout floating'
 
 [[on-window-detected]]
-if.app-id = 'com.effect.streisand'
-run = 'layout floating'
+if.app-id = 'com.microsoft.VSCode'
+run = ['move-node-to-workspace I']
+
+[[on-window-detected]]
+if.app-id = 'us.zoom.xos'
+run = ['move-node-to-workspace Z'] 
