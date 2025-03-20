@@ -15,8 +15,8 @@
     stderr: true
     include: ["tap", "brew", "cask"]
 - shell:
-  - command: |
-      source ~/.zshrc
-    description: update env
-    stdout: true
-    stderr: true
+    - command: |
+        source ~/.zshrc
+      description: update env
+      stdout: true
+      stderr: true
