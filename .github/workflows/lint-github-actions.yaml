@@ -1,7 +1,9 @@
 ---
 name: Lint GitHub Actions
 
-on:  # yamllint disable-line rule:truthy
+permissions: {}
+
+on:
   push:
     branches: [main, work, personal]
     paths:
