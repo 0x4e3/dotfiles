@@ -52,4 +52,3 @@ jobs:
                 level: warning
               trailing-spaces:
                 level: warning
-
