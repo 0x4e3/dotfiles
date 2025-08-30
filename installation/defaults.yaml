@@ -1,7 +1,7 @@
 ---
 - shell:
     - command: |
-        bash ~/.dotenv/defaults/defaults.sh
+        bash ~/.dotfiles/defaults/defaults.sh
       description: set macOS defaults
       stdout: true
       stderr: true
