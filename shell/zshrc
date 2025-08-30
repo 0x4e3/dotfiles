@@ -102,3 +102,6 @@ eval "$(starship init zsh)"
 
 # Local shell settings
 source $HOME/.shell/zshrc_local
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/Users/im-ad/.lmstudio/bin"
