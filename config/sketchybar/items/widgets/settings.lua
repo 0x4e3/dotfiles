@@ -36,7 +36,8 @@ local edit_configuration = sbar.add("item", {
 })
 
 edit_configuration:subscribe("mouse.clicked", function()
-  sbar.exec("osascript -e 'tell application \"Terminal\" to if (count of windows) = 0 then reopen' -e 'tell application \"Terminal\" to activate' -e 'tell application \"Terminal\" to do script \"cd ~/.config/sketchybar && code config.json\" in front window'")
+  sbar.exec(
+  "osascript -e 'tell application \"Terminal\" to if (count of windows) = 0 then reopen' -e 'tell application \"Terminal\" to activate' -e 'tell application \"Terminal\" to do script \"cd ~/.config/sketchybar && code config.json\" in front window'")
 end)
 
 sbar.add("bracket", "widgets.settings.bracket", { settings_widget.name }, {
@@ -49,9 +50,9 @@ sbar.add("item", "widgets.settings.padding", {
 })
 
 settings_widget:subscribe("mouse.clicked", function()
-  settings_widget:set( { popup = { drawing = "toggle" } })
+  settings_widget:set({ popup = { drawing = "toggle" } })
 end)
 
 settings_widget:subscribe("mouse.exited.global", function()
-  settings_widget:set( { popup = { drawing = "off" } })
+  settings_widget:set({ popup = { drawing = "off" } })
 end)

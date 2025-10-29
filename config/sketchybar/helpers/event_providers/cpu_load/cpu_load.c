@@ -30,7 +30,7 @@ int main (int argc, char** argv) {
       argv[1],
       cpu.user_load,
       cpu.sys_load,
-      cpu.total_load                                        
+      cpu.total_load
     );
 
     // Trigger the event

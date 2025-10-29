@@ -49,8 +49,10 @@ local function update_menus(env)
     local id = 1
     for menu in string.gmatch(menus, '[^\r\n]+') do
       if id < max_items then
-        menu_items[id]:set( { label = menu, drawing = true } )
-      else break end
+        menu_items[id]:set({ label = menu, drawing = true })
+      else
+        break
+      end
       id = id + 1
     end
   end)
@@ -61,12 +63,12 @@ menu_watcher:subscribe("front_app_switched", update_menus)
 space_menu_swap:subscribe("swap_menus_and_spaces", function(env)
   local drawing = menu_items[1]:query().geometry.drawing == "on"
   if drawing then
-    menu_watcher:set( { updates = false })
+    menu_watcher:set({ updates = false })
     sbar.set("/menu\\..*/", { drawing = false })
     sbar.set("/space\\..*/", { drawing = true })
     sbar.set("front_app", { drawing = true })
   else
-    menu_watcher:set( { updates = true })
+    menu_watcher:set({ updates = true })
     sbar.set("/space\\..*/", { drawing = false })
     sbar.set("front_app", { drawing = false })
     update_menus()

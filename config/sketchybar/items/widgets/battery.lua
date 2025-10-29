@@ -30,34 +30,34 @@ local remaining_time = sbar.add("item", {
 })
 
 local battery_condition = sbar.add("item", {
-    position = "popup." .. battery.name,
-    icon = {
-      string = "Battery condition:",
-      width = 100,
-      align = "left"
-    },
-    label = {
-      string = "Normal",
-      width = 100,
-      align = "right"
-    },
+  position = "popup." .. battery.name,
+  icon = {
+    string = "Battery condition:",
+    width = 100,
+    align = "left"
+  },
+  label = {
+    string = "Normal",
+    width = 100,
+    align = "right"
+  },
 })
 
 local battery_capacity = sbar.add("item", {
-    position = "popup." .. battery.name,
-    icon = {
-      string = "Maximum capacity:",
-      width = 100,
-      align = "left"
-    },
-    label = {
-      string = "86%",
-      width = 100,
-      align = "right"
-    },
+  position = "popup." .. battery.name,
+  icon = {
+    string = "Maximum capacity:",
+    width = 100,
+    align = "left"
+  },
+  label = {
+    string = "86%",
+    width = 100,
+    align = "right"
+  },
 })
 
-battery:subscribe({"routine", "power_source_change", "system_woke"}, function()
+battery:subscribe({ "routine", "power_source_change", "system_woke" }, function()
   sbar.exec("pmset -g batt", function(batt_info)
     local icon = "!"
     local label = "?"
@@ -106,7 +106,7 @@ end)
 
 battery:subscribe("mouse.clicked", function(env)
   local drawing = battery:query().popup.drawing
-  battery:set( { popup = { drawing = "toggle" } })
+  battery:set({ popup = { drawing = "toggle" } })
 
   if drawing == "off" then
     sbar.exec("pmset -g batt", function(batt_info)
@@ -115,23 +115,23 @@ battery:subscribe("mouse.clicked", function(env)
 
       local charging, _, _ = batt_info:find("AC Power")
       local icon = charging and "Time till full:" or "Time remaining:"
-      remaining_time:set( { icon = icon, label = label })
+      remaining_time:set({ icon = icon, label = label })
     end)
 
-    sbar.exec("system_profiler SPPowerDataType", function (batt_info)
+    sbar.exec("system_profiler SPPowerDataType", function(batt_info)
       local found, _, condition = batt_info:find("Condition: (%a+)")
       local label = found and condition or "Unknown"
-      battery_condition:set( { label = label })
+      battery_condition:set({ label = label })
 
       local found, _, capacity = batt_info:find("Maximum Capacity: (%d+)%%")
       local label = found and capacity .. "%" or "Unknown"
-      battery_capacity:set( { label = label })
+      battery_capacity:set({ label = label })
     end)
   end
 end)
 
 battery:subscribe("mouse.exited.global", function()
-  battery:set( { popup = { drawing = "off" } })
+  battery:set({ popup = { drawing = "off" } })
 end)
 
 sbar.add("bracket", "widgets.battery.bracket", { battery.name }, {

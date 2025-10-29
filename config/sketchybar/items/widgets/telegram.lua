@@ -15,17 +15,17 @@ local telegram = sbar.add("item", "widgets.telegram", {
   update_freq = 10,
 })
 
-telegram:subscribe({"routine", "system_woke"}, function()
+telegram:subscribe({ "routine", "system_woke" }, function()
   sbar.exec("lsappinfo info -only StatusLabel Telegram", function(telegram_status)
     local found, _, messages = string.find(telegram_status, "(%d+)")
     if found then
-      telegram:set({ 
-        icon = {color = colors.red},
-      })  
+      telegram:set({
+        icon = { color = colors.red },
+      })
     else
-      telegram:set({ 
-        icon = {color = colors.white},
-      })  
+      telegram:set({
+        icon = { color = colors.white },
+      })
     end
   end)
 end)
@@ -33,4 +33,3 @@ end)
 telegram:subscribe("mouse.clicked", function()
   sbar.exec("open -a 'Telegram'")
 end)
-

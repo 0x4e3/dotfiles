@@ -7,7 +7,7 @@ local function load_config()
     paddings = 3,
     group_paddings = 5,
     font = {
-      text = "JetBrainsMono Nerd Font", -- Used for text
+      text = "JetBrainsMono Nerd Font",    -- Used for text
       numbers = "JetBrainsMono Nerd Font", -- Used for numbers
       style_map = {
         ["Regular"] = "Regular",

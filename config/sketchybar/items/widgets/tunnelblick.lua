@@ -15,18 +15,18 @@ local tunnelblick = sbar.add("item", "widgets.tunnelblick", {
   update_freq = 10,
 })
 
-tunnelblick:subscribe({"routine", "system_woke"}, function()
+tunnelblick:subscribe({ "routine", "system_woke" }, function()
   sbar.exec("osascript helpers/tunnelblick.scpt", function(connection_status)
     if connection_status == "CONNECTED\n" then
-      tunnelblick:set({ 
-        icon = {color = colors.green},
+      tunnelblick:set({
+        icon = { color = colors.green },
         background = { color = colors.bg2 },
-      })  
+      })
     else
-      tunnelblick:set({ 
-        icon = {color = colors.yellow},
+      tunnelblick:set({
+        icon = { color = colors.yellow },
         background = { color = colors.bg1 },
-      })  
+      })
     end
   end)
 end)
