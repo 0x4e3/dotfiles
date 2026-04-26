@@ -36,7 +36,5 @@ run_dotbot() {
 run_dotbot 'installation/shell.yaml' || true
 run_dotbot 'installation/git.yaml' || true
 run_dotbot 'installation/brew.yaml' || true
-run_dotbot 'installation/python.yaml' || true
-run_dotbot 'installation/iTerm.yaml' || true
 run_dotbot 'installation/config.yaml' || true
 run_dotbot 'installation/defaults.yaml' || true
