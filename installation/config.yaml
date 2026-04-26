@@ -50,3 +50,12 @@
       path: config/karabiner/*
       create: true
       force: true
+
+# yazi
+# ----------------------------------------------------------------------------
+- link:
+    ~/.config/yazi/:
+      path: config/yazi/*
+      create: true
+      force: true
+
