@@ -21,7 +21,7 @@ git submodule update --init --recursive
 
 # Linking dotfiles:
 
-run_dotbot () {
+run_dotbot() {
   local config
   config="$1"
 
@@ -38,6 +38,5 @@ run_dotbot 'installation/git.yaml' || true
 run_dotbot 'installation/brew.yaml' || true
 run_dotbot 'installation/python.yaml' || true
 run_dotbot 'installation/iTerm.yaml' || true
-run_dotbot 'installation/vim.yaml' || true
 run_dotbot 'installation/config.yaml' || true
 run_dotbot 'installation/defaults.yaml' || true
