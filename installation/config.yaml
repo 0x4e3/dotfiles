@@ -41,3 +41,12 @@
       path: config/wezterm/wezterm.lua
       create: true
       force: true
+
+
+# karabiner
+# ----------------------------------------------------------------------------
+- link:
+    ~/.config/karabiner/:
+      path: config/karabiner/*
+      create: true
+      force: true
