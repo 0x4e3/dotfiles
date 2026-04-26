@@ -70,7 +70,7 @@ HIST_STAMPS="dd.mn.yyyy"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git brew pyenv zsh-autosuggestions zsh-syntax-highlighting)
+plugins=(git brew pyenv zsh-autosuggestions zsh-syntax-highlighting fzf)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -89,9 +89,6 @@ export PYTHONDONTWRITEBYTECODE=whooosh
 
 # PATH manipulations
 source $HOME/.shell/zshrc_path
-
-# direnv init
-eval "$(direnv hook zsh)"
 
 # pyenv init
 eval "$(pyenv init -)"
