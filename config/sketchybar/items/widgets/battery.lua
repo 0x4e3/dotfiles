@@ -12,19 +12,19 @@ local battery = sbar.add("item", "widgets.battery", {
   },
   label = { font = { family = settings.font.numbers } },
   update_freq = 180,
-  popup = { align = "center" }
+  popup = { align = "center" },
 })
 
 local remaining_time = sbar.add("item", {
   position = "popup." .. battery.name,
   icon = {
     string = "??",
-    width = 100,
+    width = 110,
     align = "left"
   },
   label = {
     string = "??:??h",
-    width = 100,
+    width = 110,
     align = "right"
   },
 })
@@ -33,12 +33,12 @@ local battery_condition = sbar.add("item", {
   position = "popup." .. battery.name,
   icon = {
     string = "Battery condition:",
-    width = 100,
+    width = 110,
     align = "left"
   },
   label = {
     string = "Normal",
-    width = 100,
+    width = 110,
     align = "right"
   },
 })
@@ -47,12 +47,12 @@ local battery_capacity = sbar.add("item", {
   position = "popup." .. battery.name,
   icon = {
     string = "Maximum capacity:",
-    width = 100,
+    width = 110,
     align = "left"
   },
   label = {
     string = "86%",
-    width = 100,
+    width = 110,
     align = "right"
   },
 })
@@ -123,7 +123,7 @@ battery:subscribe("mouse.clicked", function(env)
       local label = found and condition or "Unknown"
       battery_condition:set({ label = label })
 
-      local found, _, capacity = batt_info:find("Maximum Capacity: (%d+)%%")
+      local found, _, capacity = batt_info:find("Capacity: (%d+)")
       local label = found and capacity .. "%" or "Unknown"
       battery_capacity:set({ label = label })
     end)
@@ -135,10 +135,10 @@ battery:subscribe("mouse.exited.global", function()
 end)
 
 sbar.add("bracket", "widgets.battery.bracket", { battery.name }, {
-  background = { color = colors.bg1 }
+  background = { color = colors.bg1 },
 })
 
 sbar.add("item", "widgets.battery.padding", {
   position = "right",
-  width = settings.group_paddings
+  width = settings.group_paddings,
 })
