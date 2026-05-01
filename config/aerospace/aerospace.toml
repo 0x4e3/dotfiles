@@ -20,9 +20,9 @@ after-startup-command = [
 
 # Notify Sketchybar about workspace change
 exec-on-workspace-change = [
-  '/bin/bash', 
+  '/bin/bash',
   '-c',
-  'sketchybar --trigger aerospace_workspace_change FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE'
+  'sketchybar --trigger aerospace_workspace_change FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE',
 ]
 
 # Start AeroSpace at login
@@ -58,11 +58,11 @@ on-focus-changed = "move-mouse window-lazy-center"
 
 [gaps]
 inner.horizontal = 5
-inner.vertical =   5
-outer.left =       5
-outer.bottom =     5
-outer.top =        [{ monitor.main = 12 }, { monitor.secondary = 45 }, 12]
-outer.right =      5
+inner.vertical = 5
+outer.left = 5
+outer.bottom = 5
+outer.top = [{ monitor.main = 12 }, { monitor.secondary = 45 }, 12]
+outer.right = 5
 
 [mode.main.binding]
 
@@ -96,12 +96,12 @@ alt-ctrl-2 = 'workspace 2'
 alt-ctrl-3 = 'workspace 3'
 alt-ctrl-4 = 'workspace 4'
 alt-ctrl-5 = 'workspace 5'
-alt-ctrl-b = 'workspace B'  # browser
-alt-ctrl-c = 'workspace C'  # chats
-alt-ctrl-i = 'workspace I'  # ide
-alt-ctrl-n = 'workspace N'  # notes
-alt-ctrl-t = 'workspace T'  # terminal
-alt-ctrl-z = 'workspace Z'  # zoom
+alt-ctrl-b = 'workspace B' # browser
+alt-ctrl-c = 'workspace C' # chats
+alt-ctrl-i = 'workspace I' # ide
+alt-ctrl-m = 'workspace M' # music
+alt-ctrl-n = 'workspace N' # notes
+alt-ctrl-t = 'workspace T' # terminal
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
 alt-ctrl-shift-1 = 'move-node-to-workspace 1'
@@ -112,9 +112,9 @@ alt-ctrl-shift-5 = 'move-node-to-workspace 5'
 alt-ctrl-shift-b = 'move-node-to-workspace B'
 alt-ctrl-shift-c = 'move-node-to-workspace C'
 alt-ctrl-shift-i = 'move-node-to-workspace I'
+alt-ctrl-shift-m = 'move-node-to-workspace M'
 alt-ctrl-shift-n = 'move-node-to-workspace N'
 alt-ctrl-shift-t = 'move-node-to-workspace T'
-alt-ctrl-shift-z = 'move-node-to-workspace Z'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#workspace-back-and-forth
 alt-ctrl-tab = 'workspace-back-and-forth'
@@ -145,4 +145,3 @@ run = 'move-node-to-workspace C'
 [[on-window-detected]]
 if.app-name-regex-substring = 'finder'
 run = 'layout floating'
-
