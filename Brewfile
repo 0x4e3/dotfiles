@@ -126,3 +126,4 @@ cask "visual-studio-code"
 cask "wezterm"
 # Multiplayer code editor
 cask "zed"
+vscode "github.copilot-chat"
