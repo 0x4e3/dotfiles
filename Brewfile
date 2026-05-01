@@ -96,6 +96,10 @@ cask "nikitabobko/tap/aerospace"
 cask "arc"
 # Desktop password and login vault
 cask "bitwarden"
+# OpenAI's official ChatGPT desktop app
+cask "chatgpt"
+# OpenAI's coding agent that runs in your terminal
+cask "codex"
 # Universal database tool and SQL client
 cask "dbeaver-community"
 # Online diagram software
