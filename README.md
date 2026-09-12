@@ -21,6 +21,7 @@ What do we have here:
   * [`sketchybar`](./config/sketchybar/)
   * [`skhd`](./config/skhd/)
   * [`wezterm`](./config/wezterm/)
+  * [`zellij`](./config/zellij/)
 
 ## Brewfile
 
@@ -35,6 +36,7 @@ There's a lot of stuff there, so to not to forget something, here is the list of
 * [`exa`](https://github.com/ogham/exa) - a modern replacement for the venerable file-listing command-line tool `ls`
 * [`fzf`](https://github.com/junegunn/fzf) - command line fuzzy finder
 * [`bat`](https://github.com/sharkdp/bat) - `cat` clone with the wings: alternative to the `cat` with syntax highlighting and git integration
+* [`zellij`](https://zellij.dev) - terminal workspace with custom keybindings and the Catppuccin Frappe theme
 
 ## Python
 
@@ -78,6 +80,23 @@ git clone https://github.com/0x4e3/dotfiles.git ~/.dotfiles
 ```bash
 cd ~/.dotfiles && bash bootstrap.sh
 ```
+
+## Zellij
+
+Zellij is installed from the `Brewfile`; `bootstrap.sh` links
+[`config.kdl`](./config/zellij/config.kdl) to `~/.config/zellij/config.kdl`.
+
+If `~/.config/zellij/config.kdl` already contains settings you want to keep,
+back it up before running the bootstrap script because the managed link replaces
+the existing file:
+
+```bash
+cp ~/.config/zellij/config.kdl ~/.config/zellij/config.kdl.backup
+cd ~/.dotfiles && bash bootstrap.sh
+```
+
+Exit active Zellij sessions and start `zellij` again after installation so it
+loads the new configuration.
 
 # License
 
