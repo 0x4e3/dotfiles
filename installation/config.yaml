@@ -59,3 +59,10 @@
       create: true
       force: true
 
+# zellij
+# ----------------------------------------------------------------------------
+- link:
+    ~/.config/zellij/config.kdl:
+      path: config/zellij/config.kdl
+      create: true
+      force: true
