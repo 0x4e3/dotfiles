@@ -102,3 +102,15 @@ eval "$(starship init zsh)"
 
 # Local shell settings
 source $HOME/.shell/zshrc_local
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/Users/im-ad/.lmstudio/bin"
+# End of LM Studio CLI section
+
+
+# The next line updates PATH for CLI.
+if [ -f '/Users/im-ad/yandex-cloud/path.bash.inc' ]; then source '/Users/im-ad/yandex-cloud/path.bash.inc'; fi
+
+# The next line enables shell command completion for yc.
+if [ -f '/Users/im-ad/yandex-cloud/completion.zsh.inc' ]; then source '/Users/im-ad/yandex-cloud/completion.zsh.inc'; fi
+
