@@ -8,6 +8,38 @@ local query_workspaces =
 
 local workspaces = {}
 local workspace_brackets = {}
+local workspace_paddings = {}
+local superscript_digits = {
+	["0"] = "⁰",
+	["1"] = "¹",
+	["2"] = "²",
+	["3"] = "³",
+	["4"] = "⁴",
+	["5"] = "⁵",
+	["6"] = "⁶",
+	["7"] = "⁷",
+	["8"] = "⁸",
+	["9"] = "⁹",
+}
+
+local function superscript_number(number)
+	return tostring(number):gsub("%d", superscript_digits)
+end
+
+local function update_workspace_displays()
+	sbar.exec(query_workspaces, function(workspaces_and_monitors)
+		for _, entry in ipairs(workspaces_and_monitors) do
+			local workspace_index = entry.workspace
+			local display = entry["monitor-appkit-nsscreen-screens-id"]
+
+			if workspaces[workspace_index] then
+				workspaces[workspace_index]:set({ display = display })
+				workspace_brackets[workspace_index]:set({ display = display })
+				workspace_paddings[workspace_index]:set({ display = display })
+			end
+		end
+	end)
+end
 
 local function updateWindows()
 	local get_windows = "aerospace list-windows --monitor all --format '%{workspace}%{app-name}' --json"
@@ -26,16 +58,27 @@ local function updateWindows()
 		for workspace_index, workspace in pairs(workspaces) do
 			local apps = workspace_apps[workspace_index] or {}
 			local icon_line = ""
-			local no_app = true
-			for i, app in ipairs(apps) do
-				no_app = false
-				local lookup = app_icons[app]
-				local icon = ((lookup == nil) and app_icons["Default"] or lookup)
-				icon_line = icon_line .. icon
+			local app_counts = {}
+			local app_order = {}
+			for _, app in ipairs(apps) do
+				if app_counts[app] == nil then
+					app_counts[app] = 0
+					table.insert(app_order, app)
+				end
+				app_counts[app] = app_counts[app] + 1
 			end
 
-			if no_app then
-				icon_line = "—"
+			for _, app in ipairs(app_order) do
+				local icon = app_icons[app] or app_icons.Default
+				local count = app_counts[app]
+				icon_line = icon_line .. icon
+				if count > 1 then
+					icon_line = icon_line .. superscript_number(count)
+				end
+			end
+
+			if #apps == 0 then
+				icon_line = "-"
 			end
 
 			sbar.animate("tanh", 10, function()
@@ -83,6 +126,8 @@ sbar.exec(query_workspaces, function(workspaces_and_monitors)
 				height = 26,
 				border_color = colors.black,
 			},
+			click_script = "aerospace workspace " .. workspace_index,
+			display = entry["monitor-appkit-nsscreen-screens-id"],
 		})
 
 		-- Single item bracket for workspace items to achieve double border on highlight
@@ -92,17 +137,20 @@ sbar.exec(query_workspaces, function(workspaces_and_monitors)
 				border_color = colors.bg2,
 				height = 28,
 				border_width = 2
-			}
+			},
+			display = entry["monitor-appkit-nsscreen-screens-id"],
 		})
 
 		-- Padding space
-		sbar.add("item", "aerospace.padding." .. workspace_index, {
+		local workspace_padding = sbar.add("item", "aerospace.padding." .. workspace_index, {
 			script = "",
 			width = settings.group_paddings * 0.5,
+			display = entry["monitor-appkit-nsscreen-screens-id"],
 		})
 
 		workspaces[workspace_index] = workspace
 		workspace_brackets[workspace_index] = workspace_bracket
+		workspace_paddings[workspace_index] = workspace_padding
 
 		-- Subscribe to aerospace workspace changes for highlighting
 		workspace:subscribe("aerospace_workspace_change", function(env)
@@ -139,6 +187,7 @@ sbar.exec(query_workspaces, function(workspaces_and_monitors)
 
 	-- Initial window update
 	updateWindows()
+	update_workspace_displays()
 
 	-- Subscribe to aerospace focus changes to update windows
 	local observer = sbar.add("item", {
@@ -146,16 +195,20 @@ sbar.exec(query_workspaces, function(workspaces_and_monitors)
 		updates = true,
 	})
 
-  -- Subscribe to aerospace special event on workspace change
+	-- Subscribe to aerospace special event on workspace change
 	observer:subscribe("aerospace_focus_change", function()
 		updateWindows()
+		update_workspace_displays()
 	end)
 
 	observer:subscribe("front_app_switched", function()
 		updateWindows()
 	end)
 
-  observer:subscribe("space_windows_change", function()
-    updateWindows()
-  end)
+
+	observer:subscribe("space_windows_change", function()
+		updateWindows()
+	end)
+
+	observer:subscribe("display_change", update_workspace_displays)
 end)
