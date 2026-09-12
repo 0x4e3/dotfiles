@@ -53,9 +53,10 @@ ram:subscribe({ "routine", "forced", "system_woke" }, function(env)
         color = colors.red
       end
     end
+    local label = "ram " .. load .. "%"
     ram:set({
       graph = { color = color },
-      label = { string = "ram " .. load .. "%" }
+      label = { string = label .. string.rep(" ", 8 - #label) }
     })
   end)
 end)

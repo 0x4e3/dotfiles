@@ -47,9 +47,10 @@ cpu:subscribe("cpu_update", function(env)
     end
   end
 
+  local label = "cpu " .. load .. "%"
   cpu:set({
     graph = { color = color },
-    label = { string = "cpu " .. load .. "%" }
+    label = { string = label .. string.rep(" ", 8 - #label) }
   })
 end)
 

@@ -81,11 +81,29 @@ local function updateWindows()
 				icon_line = "-"
 			end
 
+			local label = { string = icon_line, drawing = true }
+			if #apps == 0 then
+				label = {
+					string = "—",
+					drawing = true,
+					width = 18,
+					align = "center",
+					padding_left = 0,
+					padding_right = 10,
+					font = {
+						family = settings.font.text,
+						size = 16.0,
+					},
+				}
+			else
+				label.font = "sketchybar-app-font:Regular:16.0"
+			end
+
 			sbar.animate("tanh", 10, function()
 				-- Always show workspace, even if empty
 				workspace:set({
 					icon = { drawing = true },
-					label = { string = icon_line, drawing = true },
+					label = label,
 					background = { drawing = true },
 				})
 				if workspace_brackets[workspace_index] then
