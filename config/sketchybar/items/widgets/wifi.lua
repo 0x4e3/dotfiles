@@ -28,6 +28,8 @@ local wifi_up = sbar.add("item", "widgets.wifi1", {
     },
     color = colors.red,
     string = "??? Bps",
+    width = 46,
+    align = "right",
   },
   y_offset = 4,
 })
@@ -51,6 +53,8 @@ local wifi_down = sbar.add("item", "widgets.wifi2", {
     },
     color = colors.blue,
     string = "??? Bps",
+    width = 46,
+    align = "right",
   },
   y_offset = -4,
 })
@@ -68,6 +72,11 @@ local wifi_bracket = sbar.add("bracket", "widgets.wifi.bracket", {
 }, {
   background = { color = colors.bg1 },
   popup = { align = "center", height = 30 }
+})
+
+sbar.add("item", "widgets.wifi.group_padding", {
+  position = "right",
+  width = settings.group_paddings,
 })
 
 local ssid = sbar.add("item", {

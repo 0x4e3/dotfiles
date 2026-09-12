@@ -10,6 +10,8 @@ local cal_up = sbar.add("item", {
   width = 0,
   label = {
     color = colors.white,
+    width = 70,
+    align = "right",
     font = {
       family = settings.font.numbers,
       size = 11.0
@@ -23,6 +25,8 @@ local cal_down = sbar.add("item", {
   padding_left = -5,
   label = {
     color = colors.white,
+    width = 70,
+    align = "right",
     font = {
       family = settings.font.numbers,
       size = 11.0
@@ -42,13 +46,10 @@ local cal_bracket = sbar.add("bracket", { cal_up.name, cal_down.name }, {
 })
 
 -- Padding item required because of bracket
-local spacing = sbar.add("item", { position = "right", width = 26 })
+sbar.add("item", { position = "right", width = settings.group_paddings })
 
 cal_bracket:subscribe({ "forced", "routine", "system_woke" }, function(env)
   local up_value = string.format("%s %d", os.date("%a %b"), tonumber(os.date("%d")))
-  if #up_value < 10 then
-    spacing:set({ width = 18 })
-  end
   local down_value = string.format("%d:%s", tonumber(os.date("%I")), os.date("%M %p"))
   cal_up:set({ label = { string = up_value } })
   cal_down:set({ label = { string = down_value } })
