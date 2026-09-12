@@ -42,6 +42,14 @@
       create: true
       force: true
 
+# ghostty
+# ----------------------------------------------------------------------------
+- link:
+    ~/.config/ghostty/config:
+      path: config/ghostty/config
+      create: true
+      force: true
+
 
 # karabiner
 # ----------------------------------------------------------------------------

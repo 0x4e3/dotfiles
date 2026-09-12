@@ -1,0 +1,36 @@
+# Ported from config/wezterm/wezterm.lua.
+background = #011423
+foreground = #CBE0F0
+cursor-color = #47FF9C
+cursor-text = #011423
+selection-background = #033259
+selection-foreground = #CBE0F0
+
+palette = 0=#214969
+palette = 1=#E52E2E
+palette = 2=#44FFB1
+palette = 3=#FFE073
+palette = 4=#0FC5ED
+palette = 5=#A277FF
+palette = 6=#24EAF7
+palette = 7=#24EAF7
+palette = 8=#214969
+palette = 9=#E52E2E
+palette = 10=#44FFB1
+palette = 11=#FFE073
+palette = 12=#A277FF
+palette = 13=#A277FF
+palette = 14=#24EAF7
+palette = 15=#24EAF7
+
+font-family = JetBrains Mono
+font-size = 13
+
+# Hide the titlebar while retaining the normal resizable window frame.
+macos-titlebar-style = hidden
+background-opacity = 0.85
+background-blur = 10
+
+# Preserve the shell word-navigation sequences sent by WezTerm.
+keybind = alt+left=text:\x1bb
+keybind = alt+right=text:\x1bf

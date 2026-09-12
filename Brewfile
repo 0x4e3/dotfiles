@@ -128,6 +128,8 @@ cask "steam"
 cask "visual-studio-code"
 # GPU-accelerated cross-platform terminal emulator and multiplexer
 cask "wezterm"
+# Fast, native terminal emulator
+cask "ghostty"
 # Multiplayer code editor
 cask "zed"
 vscode "github.copilot-chat"

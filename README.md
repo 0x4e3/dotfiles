@@ -21,6 +21,7 @@ What do we have here:
   * [`sketchybar`](./config/sketchybar/)
   * [`skhd`](./config/skhd/)
   * [`wezterm`](./config/wezterm/)
+  * [`ghostty`](./config/ghostty/)
   * [`zellij`](./config/zellij/)
 
 ## Brewfile
